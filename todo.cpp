@@ -14,24 +14,28 @@ void showTasks() {
 
     cout << "=== СПИСОК ДЕЛ ===" << endl;
     for (int i = 0; i < tasks.size(); i++) {
-        cout << (i + 1) << ". " << tasks[i] << endl;
+        cout << i + 1 << ". " << tasks[i] << endl;
     }
     cout << "==================" << endl;
 }
 
 void addTask() {
     string task;
-    cout << "Введите задачу: ";
+    cout << "Введите новую задачу: ";
     cin.ignore();
     getline(cin, task);
     tasks.push_back(task);
     cout << "Задача добавлена!" << endl;
 }
 
-void deleteTask() {
-    showTasks();
-    if (tasks.empty()) return;
+// Добавляем функцию removeTask()
+void removeTask() {
+    if (tasks.empty()) {
+        cout << "Список задач пуст!" << endl;
+        return;
+    }
 
+    showTasks();
     int index;
     cout << "Введите номер задачи для удаления: ";
     cin >> index;
@@ -52,7 +56,6 @@ int main() {
         cout << "\n=== МЕНЮ ===" << endl;
         cout << "1. Показать задачи" << endl;
         cout << "2. Добавить задачу" << endl;
-        cout << "3. Удалить задачу" << endl;
         cout << "0. Выход" << endl;
         cout << "Выберите действие: ";
         cin >> choice;
@@ -63,9 +66,6 @@ int main() {
             break;
         case 2:
             addTask();
-            break;
-        case 3:
-            deleteTask();
             break;
         case 0:
             cout << "До свидания!" << endl;
