@@ -1,14 +1,5 @@
 
 Admin@DESKTOP-EQU28RI MINGW64 ~/Desktop/Новая папка
-$ git clone https://github.com/ваш-username/my-first-project.git
-cd my-first-project
-Cloning into 'my-first-project'...
-remote: Repository not found.
-fatal: repository 'https://github.com/ваш-username/my-first-project.git/' not fo
-und
-bash: cd: my-first-project: No such file or directory
-
-Admin@DESKTOP-EQU28RI MINGW64 ~/Desktop/Новая папка
 $ git clone https://github.com/gkju-hoi/my-first-project.git
 Cloning into 'my-first-project'...
 remote: Enumerating objects: 3, done.
