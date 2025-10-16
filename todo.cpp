@@ -48,6 +48,30 @@ void removeTask() {
     tasks.erase(tasks.begin() + index - 1);
     cout << "Задача удалена!" << endl;
 }
+// Добавляем функцию loadTasks()
+void loadTasks() {
+    ifstream file(FILENAME);
+    if (file.is_open()) {
+        tasks.clear();
+        string task;
+        while (getline(file, task)) {
+            if (!task.empty()) {
+                tasks.push_back(task);
+            }
+        }
+        file.close();
+    }
+}
+
+void saveTasks() {
+    ofstream file(FILENAME);
+    if (file.is_open()) {
+        for (const auto& task : tasks) {
+            file << task << endl;
+        }
+        file.close();
+    }
+}
 
 int main() {
     int choice;
